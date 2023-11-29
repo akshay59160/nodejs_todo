@@ -13,11 +13,13 @@ config({
 
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors({
-    origin:[process.env.FRONTEND_URL],
-    method:["GET","POST","PUT","DELETE"],
-    credential:true
-}));
+// app.use(cors({
+//     origin:[process.env.FRONTEND_URL],
+//     method:["GET","POST","PUT","DELETE"],
+//     credential:true
+// }));
+
+app.use(cors());
 app.use("/user",userRouter);
 app.use("/task",taskRouter);
 
